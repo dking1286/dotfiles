@@ -1,6 +1,7 @@
 .smex-items
 *~$
 places
+recentf
 .recentf
 ido.last
 cider-history
@@ -9,7 +10,5 @@ projectile.cache
 auto-save-list
 backups
 elpa
-auto-save-list
-vendor
 network-security
 
