@@ -11,4 +11,17 @@ auto-save-list
 backups
 elpa
 network-security
+network-security.data
 
+.stack/build-plan
+.stack/build-plan-cache
+.stack/compiler-tools
+.stack/indices
+.stack/loaded-snapshot-cache
+.stack/programs
+.stack/setup-exe-cache
+.stack/setup-exe-src
+.stack/snapshots
+.stack/global-project/*
+!.stack/global-project/README.txt
+!.stack/global-project/stack.yaml
