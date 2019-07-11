@@ -350,13 +350,22 @@
 
 ;; Define a refresh function to facilitate the "reloaded workflow" in Clojure
 ;; See http://thinkrelevance.com/blog/2013/06/04/clojure-workflow-reloaded
-(defun cider-refresh ()
+(defun dok-cider-refresh ()
   (interactive)
   (cider-interactive-eval (format "(user/reset)")))
 
+(setq cider-lein-parameters (concat "with-profile +dev,+dev-local repl "
+                                    ":headless :host localhost"))
+
+(defun dok-cider-jack-in ()
+  (interactive)
+  (let ((cider-lein-parameters (concat "with-profile +dev,+dev-local repl "
+                                       ":headless :host localhost")))
+    (cider-jack-in)))
+
 (eval-after-load 'cider
-  '(progn (define-key clojure-mode-map (kbd "C-c C-r") 'cider-refresh)
-          (define-key cider-mode-map (kbd "C-c C-r") 'cider-refresh)))
+  '(progn (define-key clojure-mode-map (kbd "C-c C-r") 'dok-cider-refresh)
+          (define-key cider-mode-map (kbd "C-c C-r") 'dok-cider-refresh)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language - Haskell
