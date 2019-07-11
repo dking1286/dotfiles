@@ -60,7 +60,11 @@
 
     ;; Tomorrow color theme
     color-theme-sanityinc-tomorrow
-  ))
+
+    ;; Yaml mode
+    yaml-mode
+
+    exec-path-from-shell))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -95,6 +99,8 @@
 
 ;; Go straight to the scratch buffer on startup
 (setq inhibit-startup-message t)
+
+(exec-path-from-shell-initialize)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Editing customizations
