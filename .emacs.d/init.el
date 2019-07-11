@@ -233,7 +233,7 @@
 ;; Hasklig font
 (set-face-attribute 'default nil
                     :family "Hasklig"
-                    :height 90
+                    :height 70
                     :weight 'normal
                     :width 'normal)
 
