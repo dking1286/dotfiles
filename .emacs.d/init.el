@@ -4,13 +4,14 @@
 
 (require 'package)
 (setq package-archives '(("melpa-stable" . "https://stable.melpa.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("gnu" . "https://elpa.gnu.org/packages/")))
 
-(package-initialize)
 
+(package-initialize)
 (when (not package-archive-contents)
-  (package-refresh-contents))
+ (package-refresh-contents))
 
 ;; Manually-downloaded packages will live in the "vendor" directory
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -32,6 +33,9 @@
     ;; integration with a Clojure REPL
     ;; https://github.com/clojure-emacs/cider
     cider
+
+    ;; Racket language support
+    racket-mode
 
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
@@ -386,7 +390,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language - HTML
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (eval-after-load 'sgml-mode
   '(progn
@@ -394,6 +398,17 @@
      (tagedit-add-paredit-like-keybindings)
      (tagedit-add-experimental-features)
      (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Language - Racket
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Path to my racket binary. Change this if your racket binary is in a different
+;; location.
+(setq racket-program "~/racket/bin/racket")
+
+;; Use paredit in racket mode
+(add-hook 'racket-mode-hook #'paredit-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Neotree
@@ -426,7 +441,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (exec-path-from-shell yaml-mode color-theme-sanityinc-tomorrow intero tagedit smex projectile paredit neotree magit ido-ubiquitous haskell-mode clojure-mode-extra-font-locking cider))))
+    (racket-mod racket-mode exec-path-from-shell yaml-mode color-theme-sanityinc-tomorrow intero tagedit smex projectile paredit neotree magit ido-ubiquitous haskell-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
