@@ -12,6 +12,7 @@ backups
 elpa
 network-security
 network-security.data
+.emacs.d/transient
 
 .stack/build-plan
 .stack/build-plan-cache
