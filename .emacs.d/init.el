@@ -157,6 +157,22 @@
 (global-set-key (kbd "C-;") 'dok-toggle-comment-on-line)
 (global-set-key (kbd "C-/") 'comment-or-uncomment-region)
 
+;; Make completions case sensitive
+(setq company-dabbrev-downcase 0)
+
+;; Reduce delay on completion
+(setq company-idle-delay 0)
+
+;; Try to complete after 1 character
+(setq company-minimum-prefix-length 1)
+
+;; Cycle through code completion suggestions
+(setq company-selection-wrap-around t)
+
+;; Navigate completion suggestions with C-n and C-p
+(define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
+(define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)
+
 ;; fix weird os x kill error (note: I've never experienced this myself)
 (defun ns-get-pasteboard ()
   "Returns the value of the pasteboard, or nil for unsupported formats."
