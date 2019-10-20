@@ -34,6 +34,9 @@
     ;; https://github.com/clojure-emacs/cider
     cider
 
+    ;; Markdown language support
+    markdown-mode
+
     ;; Racket language support
     racket-mode
 
@@ -394,6 +397,13 @@
 (add-hook 'js-mode-hook #'electric-pair-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Language - Markdown
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language - Racket
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -442,7 +452,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (racket-mod racket-mode exec-path-from-shell yaml-mode color-theme-sanityinc-tomorrow intero tagedit smex projectile paredit neotree magit ido-ubiquitous haskell-mode clojure-mode-extra-font-locking cider))))
+    (markdown-mode racket-mod racket-mode exec-path-from-shell yaml-mode color-theme-sanityinc-tomorrow intero tagedit smex projectile paredit neotree magit ido-ubiquitous haskell-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
