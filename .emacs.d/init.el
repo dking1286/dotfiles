@@ -430,6 +430,9 @@
 ;; Use paredit in racket mode
 (add-hook 'racket-mode-hook #'paredit-mode)
 
+;; Use paredit in the racket repl
+(add-hook 'racket-repl-mode-hook #'paredit-mode)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language - Shell
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
