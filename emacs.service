@@ -1,6 +1,7 @@
 # Systemd service to start the Emacs Daemon on startup.
-# To use, create a symlink to this file at
+# To use, copy this file to
 # ~/.config/systemd/user/emacs.service
+# Note: It must be copied, not symlinked
 
 [Unit]
 Description=Emacs text editor
@@ -8,8 +9,8 @@ Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/emacs --daemon
-ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+ExecStart=/home/dking/bin/emacs --daemon
+ExecStop=/home/dking/bin/emacsclient --eval "(kill-emacs)"
 Environment=SSH_AUTH_SOCK=%t/keyring/ssh
 Restart=on-failure
 
