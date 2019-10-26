@@ -76,6 +76,12 @@
 
     ;; Pop-up for code completion
     company
+
+    ;; Extra documentation for company mode popups
+    company-quickhelp
+
+    ;; Powerline, nice looking bottom bar
+    powerline
     ))
 
 ;; Install all packages
@@ -103,9 +109,6 @@
 
 ;; Transfer $PATH from shell to emacs
 (exec-path-from-shell-initialize)
-
-;; Enable global popups for code completion
-(global-company-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Editing customizations
@@ -157,11 +160,19 @@
 (global-set-key (kbd "C-;") 'dok-toggle-comment-on-line)
 (global-set-key (kbd "C-/") 'comment-or-uncomment-region)
 
+;; Enable global popups for code completion
+(global-company-mode)
+(company-quickhelp-mode)
+
 ;; Make completions case sensitive
 (setq company-dabbrev-downcase 0)
 
-;; Reduce delay on completion
-(setq company-idle-delay 0)
+;; Reduce delay on attempting code completion
+(setq company-idle-delay 0.3)
+
+;; Reduce delay on showing documentation
+;; for the current completion candidate
+(setq company-quickhelp-delay 0.3)
 
 ;; Try to complete after 1 character
 (setq company-minimum-prefix-length 1)
@@ -292,6 +303,10 @@
               whitespace-style '(face lines-tail))
 
 (add-hook 'prog-mode-hook #'whitespace-mode)
+
+;; Enable Powerline for a nicer bottom bar
+(require 'powerline)
+(powerline-default-theme)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language - Clojure
@@ -471,7 +486,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (markdown-mode racket-mod racket-mode exec-path-from-shell yaml-mode color-theme-sanityinc-tomorrow intero tagedit smex projectile paredit neotree magit ido-ubiquitous haskell-mode clojure-mode-extra-font-locking cider))))
+    (powerline company-quickhelp markdown-mode racket-mod racket-mode exec-path-from-shell yaml-mode color-theme-sanityinc-tomorrow intero tagedit smex projectile paredit neotree magit ido-ubiquitous haskell-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
