@@ -1,3 +1,5 @@
+.clojure/.cpcache
+
 .emacs.d/.smex-items
 .emacs.d/*~$
 .emacs.d/places
