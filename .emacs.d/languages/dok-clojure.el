@@ -2,7 +2,8 @@
 
 (dok-require-packages '(cider
                         clojure-mode
-                        clojure-mode-extra-font-locking))
+                        clojure-mode-extra-font-locking
+                        clj-refactor))
 
 (require 'dok-paredit)
 
@@ -16,8 +17,9 @@
 (defun dok-cider-jack-in ()
   (interactive)
   (let ((cider-lein-parameters (concat "with-profile +dev,+dev-local repl "
-                                       ":headless :host localhost")))
-    (cider-jack-in)))
+                                       ":headless :host localhost"))
+        (cider-clojure-cli-global-options "-A:dev"))
+    (cider-jack-in '())))
 
 ;; Paredit for Clojure
 (add-hook 'clojure-mode-hook #'enable-paredit-mode)
@@ -38,6 +40,13 @@
                 (1 font-lock-keyword-face))))
             (define-clojure-indent (fact 1))
             (define-clojure-indent (facts 1))))
+
+;; Enable clj-refactor
+(add-hook 'clojure-mode-hook
+          (lambda ()
+            (clj-refactor-mode 1)
+            (yas-minor-mode 1) ; for adding require/use/import statements
+            (cljr-add-keybindings-with-prefix "C-c C-m")))
 
 ;; Provides minibuffer documentation for the code you're typing into the
 ;; Cider REPL

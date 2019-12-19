@@ -72,7 +72,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (zenburn-theme powerline company-quickhelp markdown-mode racket-mod racket-mode exec-path-from-shell yaml-mode color-theme-sanityinc-tomorrow intero tagedit smex projectile paredit neotree magit ido-ubiquitous haskell-mode clojure-mode-extra-font-locking cider))))
+    (clj-refactor zenburn-theme powerline company-quickhelp markdown-mode racket-mod racket-mode exec-path-from-shell yaml-mode color-theme-sanityinc-tomorrow intero tagedit smex projectile paredit neotree magit ido-ubiquitous haskell-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
