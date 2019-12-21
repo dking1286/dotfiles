@@ -1,7 +1,8 @@
+(require 'dok-straight)
+
 (defun dok-require-packages (packages)
   "Installs a package if it is not already installed."
-  (dolist (pkg packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
+  (dolist (package packages)
+    (straight-use-package package)))
 
 (provide 'dok-utils)

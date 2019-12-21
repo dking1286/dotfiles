@@ -14,6 +14,8 @@
 .emacs.d/elpa
 .emacs.d/network-security
 .emacs.d/network-security.data
+.emacs.d/straight/*
+!.emacs.d/straight/versions
 .emacs.d/transient
 
 .stack/build-plan
