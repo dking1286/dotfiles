@@ -71,4 +71,9 @@
 ;; Keybinding to open the file tree viewer
 (global-set-key [f8] 'neotree-toggle)
 
+;; Navigate between windows using shift+arrow
+(require 'windmove)
+(windmove-default-keybindings)
+(setq windmove-wrap-around t)
+
 (provide 'dok-navigation)
