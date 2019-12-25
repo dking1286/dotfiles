@@ -21,6 +21,10 @@
 ;; Start Emacs fullscreen
 (setq initial-frame-alist '((fullscreen . maximized)))
 
+;; Start with two windows side-by-side
+(when (= (count-windows) 1)
+  (split-window-horizontally))
+
 ;; Go straight to the scratch buffer on startup
 (setq inhibit-startup-message t)
 
