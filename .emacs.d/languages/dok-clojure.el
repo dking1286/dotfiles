@@ -3,7 +3,8 @@
 (dok-require-packages '(cider
                         clojure-mode
                         clojure-mode-extra-font-locking
-                        clj-refactor))
+                        clj-refactor
+                        aggressive-indent))
 
 (require 'dok-paredit)
 
@@ -20,6 +21,11 @@
                                        ":headless :host localhost"))
         (cider-clojure-cli-global-options "-A:dev"))
     (cider-jack-in '())))
+
+(defun dok-cider-jack-in-cljs ()
+  (interactive)
+  (let ((cider-clojure-cli-global-options "-A:dev:shadow-cljs"))
+    (cider-jack-in-cljs '())))
 
 ;; Paredit for Clojure
 (add-hook 'clojure-mode-hook #'enable-paredit-mode)
@@ -47,6 +53,9 @@
             (clj-refactor-mode 1)
             (yas-minor-mode 1) ; for adding require/use/import statements
             (cljr-add-keybindings-with-prefix "C-c C-m")))
+
+;; Aggressive indent mode keeps code indented properly after every change.
+(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
 
 ;; Provides minibuffer documentation for the code you're typing into the
 ;; Cider REPL
