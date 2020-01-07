@@ -15,6 +15,7 @@
 
 ;; Load language-specific customizations
 (require 'dok-clojure)
+(require 'dok-dockerfile)
 (require 'dok-emacs-lisp)
 (require 'dok-haskell)
 (require 'dok-html)
