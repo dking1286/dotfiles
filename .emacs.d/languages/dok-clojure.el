@@ -8,6 +8,10 @@
 
 (require 'dok-paredit)
 
+(defun dok-clojure-check-all ()
+  "Runs generative testing on all instrumented symbols"
+  (cider-interactive-eval (format "(clojure.spec.test.alpha/check)")))
+
 (defun dok-cider-refresh ()
   "Refreshes the Clojure project in the REPL, to facilitate the
    the 'reloaded workflow'.
@@ -82,7 +86,9 @@
 
 (eval-after-load 'cider
   '(progn (define-key clojure-mode-map (kbd "C-c C-r") 'dok-cider-refresh)
-          (define-key cider-mode-map (kbd "C-c C-r") 'dok-cider-refresh)))
+          (define-key clojure-mode-map (kbd "C-c C-s c") 'dok-clojure-check-all)
+          (define-key cider-mode-map (kbd "C-c C-r") 'dok-cider-refresh)
+          (define-key cider-mode-map (kbd "C-c C-s c") 'dok-clojure-check-all)))
 
 ;; Enable "fuzzy matching" on code completion
 (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
