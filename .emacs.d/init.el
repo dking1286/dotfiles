@@ -22,6 +22,7 @@
 (require 'dok-javascript)
 (require 'dok-markdown)
 (require 'dok-racket)
+(require 'dok-scss)
 (require 'dok-shell)
 (require 'dok-yaml)
 
