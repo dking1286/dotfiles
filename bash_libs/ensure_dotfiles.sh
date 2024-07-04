@@ -1,3 +1,11 @@
+# Function to automatically create symlinks in the home directory pointing to
+# a shared dotfiles repository.
+#
+# Motivating use case: I want to share my dotfiles across multiple Unix-like
+# systems, so that I don't need to re-define them every time I get a new
+# computer. To accomplish this, I clone this dotfiles repository, and create
+# symlinks in my home directory to the files in this repository, instead of
+# allowing programs to create dotfiles directly in my home directory.
 function ensure_dotfiles {
     if [ "$1" = "-v" ] || [ "$1" = "--verbose" ]; then
         local verbose=true
