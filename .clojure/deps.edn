@@ -1,17 +1,17 @@
 {:aliases
  {:cider
   {:extra-deps {cider/cider-nrepl {:mvn/version "0.23.0-SNAPSHOT"}
-                refactor-nrepl {:mvn/version "2.4.0"}}}
-  
+                refactor-nrepl/refactor-nrepl {:mvn/version "2.4.0"}}}
+
   :cider-nrepl
   {:extra-deps {cider/cider-nrepl {:mvn/version "0.23.0-SNAPSHOT"}
-                refactor-nrepl {:mvn/version "2.4.0"}
+                refactor-nrepl/refactor-nrepl {:mvn/version "2.4.0"}
                 nrepl/nrepl {:mvn/version "0.6.0"}}
    :main-opts
    ["-m" "nrepl.cmdline"
     "--port" "3333"
     "--middleware" "[\"cider.nrepl/cider-middleware\" \"refactor-nrepl.middleware/wrap-refactor\"]"]}
-  
+
   :new
   {:extra-deps {seancorfield/clj-new {:mvn/version "1.0.199"}}
    :main-opts ["-m" "clj-new.create"]}}}
