@@ -1,4 +1,8 @@
+.clj-kondo
+
 .clojure/.cpcache
+.clojure/.lsp
+.clojure/.clj-kondo
 
 .emacs.d/.smex-items
 .emacs.d/*~$
@@ -17,6 +21,8 @@
 .emacs.d/straight/*
 !.emacs.d/straight/versions
 .emacs.d/transient
+
+.lsp
 
 .stack/build-plan
 .stack/build-plan-cache
