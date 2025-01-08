@@ -12,6 +12,13 @@ else
     # Install nvm
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
+    # The `nvm` command is set up by adding some lines to .bashrc. To use `nvm`
+    # now without closing and re-opening the terminal, we need to evaluate those
+    # same lines here.
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
     # Install latest LTS version of nodejs
     nvm install --lts
     nvm use --lts
