@@ -2,6 +2,8 @@
 
 set -e
 
+sudo apt update
+
 ./install_scripts/ubuntu/install_git.sh
 ./install_scripts/ubuntu/install_java.sh
 ./install_scripts/ubuntu/install_clojure.sh
