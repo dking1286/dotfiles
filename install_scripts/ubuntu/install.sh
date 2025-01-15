@@ -19,6 +19,7 @@ sudo apt update
 ./install_emacs.sh
 
 # Virtualization tools
+./install_docker_desktop.sh
 ./install_gnome_boxes.sh
 ./install_virtualbox.sh
 
