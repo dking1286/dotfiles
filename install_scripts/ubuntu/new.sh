@@ -15,7 +15,7 @@ if command -v $name >& /dev/null; then
     echo "$name is already installed, skipping."
 else
     echo "Installing $name..."
-    sudo apt-get install -y $name
+    sudo apt-get -y install $name
 fi
 EOF
 ) > $file_path
