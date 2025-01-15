@@ -3,7 +3,7 @@
 set -e
 
 name=$1
-file_path="./install_scripts/ubuntu/install_${name/"-"/"_"}.sh"
+file_path="./install_${name/"-"/"_"}.sh"
 
 (
 cat <<EOF

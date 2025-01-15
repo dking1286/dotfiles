@@ -27,6 +27,7 @@ sudo apt update
 ./install_gnome_tweaks.sh
 ./install_input_remapper.sh
 ./install_obsidian.sh
+./install_slack.sh
 
 sudo apt update
 sudo apt -y upgrade
