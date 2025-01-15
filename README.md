@@ -28,7 +28,7 @@ load_bash_libs $bash_libs_path ${bash_libs_to_load[@]}
 ensure_dotfiles $dotfiles_path ${dotfiles[@]}
 ```
 
-## init_ubuntu.sh
+## Installing software on Ubuntu
 
 If you are starting from a fresh Ubuntu install and want to get up and running
 with several useful pieces of software, you can use the `init_ubuntu.sh` script.
@@ -54,5 +54,5 @@ Note: If you are running this under WSL, it seems that the `.profile` never gets
 evaluated, because the shell is not a "login shell". Therefore, you should put
 this into your `.bashrc`.
 
-2) `cd` into the `dotfiles` directory, and run `./init_ubuntu.sh`. Note that
-you must do this from within the `dotfiles` directory.
+2) `cd` into the `dotfiles/install_scripts/ubuntu` directory, and run `./install.sh`. Note that
+you *must* do this from within the `dotfiles/install_scripts/ubuntu` directory.
