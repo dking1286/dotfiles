@@ -23,5 +23,8 @@ sudo apt update
 ./install_gnome_boxes.sh
 ./install_virtualbox.sh
 
+# Productivity tools
+./install_obsidian.sh
+
 sudo apt update
 sudo apt -y upgrade
