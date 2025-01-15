@@ -1,0 +1,7 @@
+{
+    "version": "2.0.1",
+    "autoload": {
+        "AT Translated Set 2 keyboard": "Dvorak with Vim keys",
+        "BY Tech NuPhy Halo75": "Dvorak with Vim keys"
+    }
+}
