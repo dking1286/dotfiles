@@ -6,5 +6,5 @@ if command -v virtualbox >& /dev/null; then
     echo "Virtualbox is already installed, skipping."
 else
     echo "Installing Virtualbox..."
-    sudo apt-get install -y virtualbox
+    sudo apt-get -y install virtualbox
 fi
