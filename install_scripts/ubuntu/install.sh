@@ -24,6 +24,8 @@ sudo apt update
 ./install_virtualbox.sh
 
 # Productivity tools
+./install_gnome_tweaks.sh
+./install_input_remapper.sh
 ./install_obsidian.sh
 
 sudo apt update
