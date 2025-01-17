@@ -10,8 +10,13 @@ sudo apt update
 
 # Programming languages
 ./install_java.sh
+./install_kotlin.sh
 ./install_clojure.sh
 ./install_node.sh
+./install_ocaml.sh
+./install_dart.sh
+./install_flutter.sh
+./install_python3_venv.sh
 
 # Editors
 ./install_jetbrains_toolbox.sh
