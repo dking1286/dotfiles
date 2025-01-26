@@ -7,6 +7,8 @@ sudo apt update
 # Development tools
 ./install_git.sh
 ./install_gcloud_cli.sh
+./install_tmux.sh
+./install_entr.sh
 
 # Programming languages
 ./install_java.sh
@@ -16,12 +18,16 @@ sudo apt update
 ./install_ocaml.sh
 ./install_dart.sh
 ./install_flutter.sh
+./install_python3_pip.sh
 ./install_python3_venv.sh
 
 # Editors
 ./install_jetbrains_toolbox.sh
 ./install_vs_code.sh
 ./install_emacs.sh
+
+# Fonts
+./install_fonts_firacode.sh
 
 # Virtualization tools
 ./install_docker_desktop.sh
