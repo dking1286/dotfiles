@@ -4,7 +4,8 @@ set -e
 
 sudo apt update
 
-# Development tools
+# Development tools and base dependencies
+./install_net_tools.sh
 ./install_git.sh
 ./install_gcloud_cli.sh
 ./install_tmux.sh
@@ -25,6 +26,7 @@ sudo apt update
 ./install_jetbrains_toolbox.sh
 ./install_vs_code.sh
 ./install_emacs.sh
+./install_cursor.sh
 
 # Fonts
 ./install_fonts_firacode.sh
