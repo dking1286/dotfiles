@@ -41,6 +41,7 @@ sudo apt update
 ./install_input_remapper.sh
 ./install_obsidian.sh
 ./install_slack.sh
+./install_ghostty.sh
 
 sudo apt update
 sudo apt -y upgrade
