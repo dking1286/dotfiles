@@ -49,3 +49,4 @@
 # resize-overlay-duration = 4s 200ms
 
 font-family = Fira Code
+theme = Tomorrow Night Bright
